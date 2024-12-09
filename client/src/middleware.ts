@@ -8,7 +8,7 @@ export default clerkMiddleware(async (auth, req) => {
   const { sessionClaims } = await auth();
   const userRole =
     (sessionClaims?.metadata as { userType: "student" | "teacher" })
-      ?.userType || "student";
+      ?.userType || "teacher";
 
       console.log("User type detected:", userRole); // Debugging log
 
